@@ -14,7 +14,7 @@ export default function HomePage() {
 
   useEffect(() => {
     api.drugs.stats().then(setStats).catch(() => {});
-    api.news.list({ limit: 3 }).then((d) => setNews(d.articles)).catch(() => {});
+    api.news.list().then((d) => setNews(d.articles)).catch(() => {});
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
